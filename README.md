@@ -1,1 +1,1 @@
-This is a repo to contain various sorting algorithms, as a refresher on TDD.
+This is a repo to contain various sorting algorithms, as a refresher on TDD. It will use node.js, Mocha, Chai and more.
