@@ -12,8 +12,6 @@ exports.sortarray = function(anarr) {
   	  var res = exports.split(anarr);
   	  var unarr1 = res[0];
   	  var unarr2 = res[1];
-  	  console.log("unarr1: "+ unarr1);
-  	  console.log("unarr2: "+ unarr2);
       if (unarr1.length > 1 ) {
       	//console.log("outputof sortarray: " + exports.sortarray(unarr1));	
       	orarr1 = exports.sortarray(unarr1);
@@ -28,9 +26,7 @@ exports.sortarray = function(anarr) {
       	orarr2 = unarr2;
       }
 
-  console.log("about to merge orarr1: " + orarr1 + " orarr2: " + orarr2);
   var merged_array = exports.merge(orarr1, orarr2);
-  console.log("merged_array = " + merged_array);
   return merged_array;
  // var ordered_array = exports.merge(orarr1, orarr2);
 };
@@ -41,13 +37,10 @@ exports.split = function(arr1) {
 	var arrays = [];
 	var array1 = [];
 	var array2 = [];
-	if ((arr1.length % 2) === 0) {
-//	console.log("In Split-if=even: " + (arr1.length % 2));  		
+	if ((arr1.length % 2) === 0) {	
        // even
        var halfarray = ((arr1.length)/2);
-//    console.log("In Split-halfarray= " + halfarray) ;
-       for (var i = 0;i<halfarray; i++) {
-//	console.log("In Split-for-even: " + arr1[i]);       	
+       for (var i = 0;i<halfarray; i++) {   	
            array1[i] = arr1[i];
            array2[i] = arr1[i+halfarray]
        }
@@ -74,25 +67,19 @@ exports.merge = function(arr1, arr2) {
   var i = 0
   var j = 0;
   for(var k=0;k<(arr1.length + arr2.length);k++) {
-  	console.log("k = " + k);
-  	console.log("arr1[i] = " + arr1[i]);
-  	console.log("arr2[j] = " + arr2[j]);
     if (i >= arr1.length ) {
-    	    	console.log("i outside of array");
       ordered_array[k] = arr2[j];
       j++;
     } else if (j >= arr2.length) {
-    	console.log("j outside of array");
+
       ordered_array[k] = arr1[i];
       i++;
     } else if (arr1[i] <= arr2[j]) {
     	ordered_array[k] = arr1[i];
-    	    	console.log("assigning from arr2: k: " + k + ", i:" + i + ", arr1[i]:" + arr1[i]);
     	i++;
 
     } else {
     	ordered_array[k] = arr2[j];
-    	    	console.log("assigning from arr2: k: " + k + ", j:" + j + ", arr2[j]:" + arr2[j]);
     	j++;
     }
   }
