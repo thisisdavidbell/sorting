@@ -39,5 +39,12 @@ describe('sortarray', function() {
 	it('sortarray() should sort an array [7,4,2,8,9] to be an array [2,4,7,8,9]', function () {
 		expect(rs.sortarray([7,4,2,8,9])).to.deep.equals([2,4,7,8,9]);
 	});
+	it('sortarray() should sort an array [8] to be an array [8]', function () {
+		expect(rs.sortarray([8])).to.deep.equals([8]);
+	});
+	it('sortarray() should sort an array [] to be an array []', function () {
+		expect(rs.sortarray([])).to.deep.equals([]);
+	});
+
 
 })

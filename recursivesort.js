@@ -1,34 +1,18 @@
 
 exports.sortarray = function(anarr) {
 
-
- // console.log("anarr.length: " + anarr.length);
   if (anarr.length <= 1) {
      return anarr;
   }
 
-      var orarr1;
-      var orarr2;
-  	  var res = exports.split(anarr);
-  	  var unarr1 = res[0];
-  	  var unarr2 = res[1];
-      if (unarr1.length > 1 ) {
-      	//console.log("outputof sortarray: " + exports.sortarray(unarr1));	
-      	orarr1 = exports.sortarray(unarr1);
-      } else {
-      	// array of 1
-      	orarr1 = unarr1;
-      }
-      if (unarr2.length > 1 ) {
-        orarr2 = exports.sortarray(unarr2);
-      } else {
-      	//array of 1
-      	orarr2 = unarr2;
-      }
+  var res = exports.split(anarr);
+
+  var orarr1 = exports.sortarray(res[0]);
+  var orarr2 = exports.sortarray(res[1]);
 
   var merged_array = exports.merge(orarr1, orarr2);
+
   return merged_array;
- // var ordered_array = exports.merge(orarr1, orarr2);
 };
 
 
